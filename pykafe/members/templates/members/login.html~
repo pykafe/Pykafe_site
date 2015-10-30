@@ -1,0 +1,8 @@
+<h1>Login</h1>
+
+    <form method="post" action=".">
+    {% csrf_token %}
+	User Name:<input type="text" name="username" value="{{ username }}" />
+	Password:<input type="password" name="password" value="{{ password }}" />
+	<button id="login_button">Login</button>
+	</form>
