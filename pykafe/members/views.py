@@ -22,7 +22,7 @@ class Login(TemplateView):
 			login(request, user)
 			response = HttpResponseRedirect(settings.LOGIN_REDIRECT_URL)
 		else:
-			context['login_filed'] = True
+			context['login_failed'] = True
 			response = super(TemplateView, self).render_to_response(context)
 
 		return response

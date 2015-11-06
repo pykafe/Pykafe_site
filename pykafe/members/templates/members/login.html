@@ -1,8 +1,15 @@
 <h1>Login</h1>
 
-    <form method="post" action=".">
-    {% csrf_token %}
-	User Name:<input type="text" name="username" value="{{ username }}" /></br>
-	Password:<input type="password" name="password" value="{{ password }}" /></br>
-	<button id="login_button">Login</button>
-	</form>
+        {% block content %}
+        <form method="post" action="{% url 'login' %}">
+            {% csrf_token %}
+            
+            {% if login_failed %}
+                <p>Ita nia username no password la existe. Favor koko dala ida tan.</p>
+            {% endif %}
+        
+	        User Name:<input type="text" name="username" value="{{ username }}" /></br>
+	        Password:<input type="password" name="password" value="{{ password }}" /></br>
+	        <button id="login_button">Login</button>
+	    </form>
+	{% endblock %} 
