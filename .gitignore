@@ -55,3 +55,21 @@ docs/_build/
 
 # PyBuilder
 target/
+
+# sqlite
+*.sqlite3
+
+# Pluma save files
+*.save
+*.save.*
+*.swp
+*.swo
+
+# MacOS X
+.DS_Store
+
+# gedit
+*~
+
+# django media directory
+source/pykafe/media/
