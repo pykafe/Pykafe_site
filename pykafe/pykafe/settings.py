@@ -105,3 +105,5 @@ STATIC_URL = '/static/'
 
 LOGIN_REDIRECT_URL = '/'
 LOGIN_URL = 'login/'
+# use pykafe employee user modelfor authentication
+AUTH_USER_MODEL = 'members.Member'
