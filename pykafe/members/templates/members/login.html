@@ -1,4 +1,5 @@
-<h1>Login</h1>
+<link href="{{ STATIC_URL }}css/bootstrap.min.css" rel="stylesheet"/>
+<h2>Login</h2>
 
         {% block content %}
         <form method="post" action="{% url 'login' %}">
@@ -7,9 +8,18 @@
             {% if login_failed %}
                 <p>Ita nia username no password la existe. Favor koko dala ida tan.</p>
             {% endif %}
-        
-	        User Name:<input type="text" name="username" value="{{ username }}" /></br>
-	        Password:<input type="password" name="password" value="{{ password }}" /></br>
-	        <button id="login_button">Login</button>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">Username:</div>
+            <div class="col-md-6"><input type="text" name="username" value="{{ username }}" /></div>
+        </div>
+        <div class="row">
+            <div class="col-md-4"> Password:</div>
+            <div class="col-md-6"><input type="password" name="password" value="{{ password }}" /></div>
+        </div>
+        <div class="row">
+            <div class="col-md-4"><button id="login_button">Login</button></div>
+        </div>
+    </div>
 	    </form>
 	{% endblock %} 
