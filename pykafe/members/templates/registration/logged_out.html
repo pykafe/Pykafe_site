@@ -1,0 +1,10 @@
+{% extends 'registration/base.html' %}
+
+{% block title %}
+	Logout
+{% endblock %}
+
+{% block content %}
+    <div id="logout_msg"> You have logged out</div>
+    <a class="btn btn-primary" href="{% url 'login' %}" role="button">Login Again</a>
+{% endblock %}

@@ -1,33 +1,15 @@
-from django.http import HttpResponseRedirect
-from django.conf import settings
-from django.views.generic import TemplateView
-from django.contrib.auth import authenticate, login
+from django.views.generic.edit import UpdateView
+from members.models import Member
 
+class Edit(UpdateView):
+    model = Member
+    fields = ['job_title', 'bio_text', 'photo']
+    template_name = 'members/edit.html'
+    success_url = '/'
 
-class Home(TemplateView):
-    template_name = 'members/index.html'
+    def get_object(self, queryset=None):
+        return self.request.user
 
+    def dispatch(self, request, *args, **kwargs):
+        return super(Edit, self).dispatch(request, *args, **kwargs)
 
-class Login(TemplateView):
-    template_name = 'members/login.html'
-
-    def post(self, request, *agrs, **kwargs):
-
-        context = self.get_context_data()
-
-        username = request.POST['username']
-        password = request.POST['password']
-
-        user = authenticate(username=username, password=password)
-        if user is not None:
-            login(request, user)
-            response = HttpResponseRedirect(settings.LOGIN_REDIRECT_URL)
-        else:
-            context['login_failed'] = True
-            response = super(TemplateView, self).render_to_response(context)
-
-        return response
-
-
-class Logout(TemplateView):
-    template_name = 'members/logout.html'

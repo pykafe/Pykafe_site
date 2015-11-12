@@ -1,0 +1,148 @@
+
+body{
+    font-family:"Gill Sans Extrabold", Helvetica, sans-serif;
+	background-color:#FFFFFF;
+}
+#pageheader, #pagefooter{
+    padding-top:20px;
+    background-color:#FFFFFF;
+    font-size:30px;
+    text-align:center;
+}
+
+a.navbar-brand {
+    padding-top: 5px;
+}
+
+a.navbar-brand img {
+    width: 50px;
+    margin-left:20px;
+}
+
+#pageheader {
+    color: #555252;
+    text-transform: uppercase;
+}
+
+.btn-primary {
+    background-color: #0ea1e2;
+    margin-top:6px;
+}
+
+
+/*LOGIN STYLES*/
+
+.login_box {
+   background: #ffffff;
+   border: 1px solid #d4dfe7;
+   box-shadow: 0px 1px 2px 0px #e7edf3;
+   padding: 20px 24px 24px;
+   margin-top: 20px;
+   margin-bottom: 20px;
+   
+}
+ 
+.logout {
+    float: right;
+}
+
+#pagefooter{
+    font-size:20px;
+}
+
+footer {
+    background-color: #636363;
+    text-align:center;
+    height: 300px;
+    margin-top:50px;
+    padding:40px;
+    color:#ffffff;
+}
+
+footer a {
+    color: #ffffff;
+
+}
+
+footer a:hover {
+    color: #87CBF5;
+    text-decoration: none;
+
+}
+
+.row{
+    margin:4px;
+    margin-left:70px;
+    padding:4px;
+}
+
+.brand{
+    width: 150px;
+    margin-top:40px;
+}
+
+.welcome{
+    float: right;
+    font-size:20px;
+    margin-right:10px;
+    margin-top:10px;
+}
+
+.circle-border{
+    border:7px solid #e7e7e7;
+}
+
+.person-name { 
+    display: block;
+    font-family: "AvenirLTStd-Black";
+    font-size: 1.31em;
+    line-height: 1.2;
+    margin-bottom: 3px;
+    text-align: left;
+}
+
+.form-horizantal {
+   margin-left:100px; 
+}
+
+#submit{
+    margin-left: 130px;
+}
+
+#id_bio_text{
+    display:block;
+}
+
+.me {
+    background-color: LightBlue;
+    border-radius:10px;
+}
+
+.member div p {
+    margin-top:35px;
+}
+
+.person-name {
+    display: block;
+    font-size: 1.3125em;
+    line-height: 1.2;
+    font-family: "AvenirLTStd-Black";
+    text-align: left;
+    margin-bottom: 3px;
+}
+.person-position {
+    margin-top: 2px;
+    font-size: 1.3125em;
+    line-height: 1.2;
+    font-family: "AvenirLTStd-Black";
+    opacity: 0.41;
+}
+.p {
+    font-family: AvenirLTStd-Book;
+    font-style: normal;
+    font-size: 15px;
+    line-height: 20px;
+    margin-top: 20px;
+    margin-left: 0px;
+    margin-right: 0px;
+}

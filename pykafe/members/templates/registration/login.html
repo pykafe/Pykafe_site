@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <link type="text/css" rel="stylesheet" media="screen" href="{{STATIC_URL}}css/bootstrap.min.css"/>
+       <link type="text/css" rel="stylesheet" media="screen" href="{{STATIC_URL}}css/bio.css"/>
+        <title>
+            login
+        </title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <form method="post" action=".">
+                    {% csrf_token %}
+                    <div class="col-md-12">
+                        <div class="login_box">
+                        <div class="row">
+                                {% if login_failed %}
+                                    <p>Your username and password didn't match. Please try again.</p>
+                                {% endif %}
+                            <div class="col-md-6">
+                                Username
+                            </div>
+                             <div class="col-md-8">
+                                <input type="text" name="username" value="{{ username }}" />  
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                Password
+                            </div>
+                             <div class="col-md-8">
+                                <input type="password" name="password" value="{{ password }}"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                            </div> 
+                            <div class="col-md-8">
+                                <button  class="btn btn-primary">Login</button>
+                            </div> 
+                        </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

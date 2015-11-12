@@ -56,6 +56,7 @@ ROOT_URLCONF = 'pykafe.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [os.path.join(BASE_DIR, 'project_templates')],
         'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -64,7 +65,10 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.i18n',
+                'django.template.context_processors.media',
                 'django.template.context_processors.static',
+                'django.template.context_processors.tz',
             ],
         },
     },
@@ -102,8 +106,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "project_static"),
+)
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR + '/media/'
 LOGIN_REDIRECT_URL = '/'
-LOGIN_URL = 'login/'
-# use pykafe employee user modelfor authentication
+
+# Use pykafe employee user modelfor authentication
 AUTH_USER_MODEL = 'members.Member'
+
