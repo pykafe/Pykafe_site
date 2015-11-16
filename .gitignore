@@ -58,6 +58,7 @@ target/
 
 # sqlite
 *.sqlite3
+pykafe/*.sqlite3
 
 # Pluma save files
 *.save
@@ -72,4 +73,4 @@ target/
 *~
 
 # django media directory
-source/pykafe/media/
+pykafe/media/
