@@ -1,64 +1,44 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <link type="text/css" rel="stylesheet" media="screen" href="{{STATIC_URL}}css/bootstrap.min.css"/>
-        <link type="text/css" rel="stylesheet" media="screen" href="{{STATIC_URL}}css/bio.css"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>
-             Edit
-        </title>
-      </head>
-      <body>
-        <nav class="navbar navbar-default">
-           <div class="container-fluid">
-                    <a class="navbar-brand" href="#">
-                        <img alt="Brand" src="{{ STATIC_URL }}img/catalpa_logo_colour.png">
-                    </a>
-                     <a class="btn btn-primary logout" href="{% url 'logout' %}" role="button">Logout</a>
-            </div>
-        </nav>
+{% extends 'members/base.html' %}
+
+{% block title %}
+    Edit
+{% endblock %}
+
+{% block content %}
+    <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <p class="welcome">Welcome {{ user.get_full_name }}</p>
-            </div>
-         </div>
-
-        <div class="container">
-            <form class="form-horizantal" action="." method="post" enctype="multipart/form-data">
-                     {% csrf_token %}
-                <div class="row">
+                <form class="form-horizantal" action="." method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
                     <div class="col-md-6">
-                        <div class="col-md-6">
-                            {{ form.job_title.label_tag }}
-                            {{ form.job_title }}
-                            {{ form.job_title.errors }}
-                        </div>
-                        
-                        <div class="col-md-12">
-                            {{ form.bio_text.label_tag }}
-                            {{ form.bio_text }}
-                            {{ form.bio_text.errors }}
-                        </div>
-                        
-                        <div class="col-md-12">
-                            {{ form.photo.label_tag }}
-                            {{ form.photo }}
-                            {{ form.photo.errors }}
-                            <button id="submit" class="btn btn-primary">Submit</button>
-                        </div>
+                        {{ form.job_title.label_tag }}
+                        {{ form.job_title }}
+                        {{ form.job_title.errors }}
+                    </div>
+
+                    <div class="col-md-12">
+                        {{ form.bio_text.label_tag }}
+                        {{ form.bio_text }}
+                        {{ form.bio_text.errors }}
+                    </div>
+
+                    <div class="col-md-12">
+                        {{ form.photo.label_tag }}
+                        {{ form.photo }}
+                        {{ form.photo.errors }}
+                        <button id="submit" class="btn btn-primary">Submit</button>
+                    </div>
                         {{ form.non_field_errors }}
-                    </form>
-                </div>
-                <div class="col-md-6">
-                 {% if object.photo %}
+                </form>
+            </div>
+            <div class="col-md-6">
+                {% if object.photo %}
                     <img src="{{ object.photo.url}}" class="img-circle circle-border" width=200 height=200/>
-                 {% endif %} 
-                    <p class="person-name">{{ user.get_full_name }}</p>
-                    <p class="person-position">{{ user.job_title }}</p>
-                    <p class="person-about">{{ user.bio_text }}</p>
-                </div>
+                {% endif %}
+                <p class="person-name">{{ user.get_full_name }}</p>
+                <p class="person-position">{{ user.job_title }}</p>
+                <p class="person-about">{{ user.bio_text }}</p>
             </div>
         </div>
-    </body>
-</html>
-		
+    </div>
+{% endblock %}

@@ -1,9 +1,8 @@
-
 <!DOCTYPE html>
 <html>
     <head>
         <link type="text/css" rel="stylesheet" media="screen" href="{{STATIC_URL}}css/bootstrap.min.css"/>
-        <link type="text/css" rel="stylesheet" media="screen" href="{{STATIC_URL}}css/ema.css"/>
+        <link type="text/css" rel="stylesheet" media="screen" href="{{STATIC_URL}}css/biopy.css"/>
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -11,24 +10,28 @@
              {% block title %}
              {% endblock %}
         </title>
-    </head>      
+    </head>
 
     <body>
         <div class="container content_block">
             <div class="row">
-                
-                <div class="col-md-4">			
+
+                <div class="col-md-4">
                 </div>
 
                 <div class="col-md-4" id="center_content">
-                    <img src="{{ STATIC_URL }}img/catalpa_logo_colour.png" />
+                    <img src="{{ STATIC_URL }}img/py_logo.png" />
                     {% block content %}
                     {% endblock %}
                 </div>
-                
+
                 <div class="col-md-4"></div>
-            
+
             </div>
          </div>
-    </body>	
+
+         <footer class="footer">
+             Copyright <a href="">Pykafe Group</a> 2015
+         </footer>
+    </body>
 </html>
