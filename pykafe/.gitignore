@@ -72,4 +72,4 @@ target/
 *~
 
 # django media directory
-source/pykafe/media/
+pykafe/media/
