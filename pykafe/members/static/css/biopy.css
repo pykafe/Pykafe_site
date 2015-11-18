@@ -10,7 +10,7 @@ body{
     text-align:center;
 }
 
-a.navbar{
+a.navbar	{
     padding-top: 5px;
 
 }
@@ -72,6 +72,18 @@ footer a:hover {
 
 .logout {
     float: right;
+    margin-top: 10px;
+}
+
+.welcome{
+    float: right;
+    font-size:20px;
+    margin-right:10px;
+    margin-top:10px;
+}
+
+.circle-border{
+    border:7px solid #e7e7e7;
 }
 
 #logout_msg{
