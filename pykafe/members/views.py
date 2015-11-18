@@ -1,9 +1,10 @@
 from django.views.generic.edit import UpdateView
 from members.models import Member
 
+
 class Edit(UpdateView):
     model = Member
-    fields = ['job_title', 'bio_text', 'photo']
+    fields = ['first_name', 'last_name', 'job_title', 'bio_text', 'photo']
     template_name = 'members/edit.html'
     success_url = '/'
 
@@ -12,4 +13,3 @@ class Edit(UpdateView):
 
     def dispatch(self, request, *args, **kwargs):
         return super(Edit, self).dispatch(request, *args, **kwargs)
-

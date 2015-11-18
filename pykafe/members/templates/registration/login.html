@@ -15,7 +15,7 @@
                     <div class="col-md-12">
                         <div class="login_box">
                         <div class="row">
-                                {% if login_failed %}
+                                {% if form.errors %}
                                     <p>Your username and password didn't match. Please try again.</p>
                                 {% endif %}
                             <div class="col-md-6">

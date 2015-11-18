@@ -58,7 +58,7 @@ target/
 
 # sqlite
 *.sqlite3
-pykafe/*.sqlite3
+pykafe/db.sqlite3
 
 # Pluma save files
 *.save
