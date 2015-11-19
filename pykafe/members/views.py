@@ -1,7 +1,13 @@
 from django.views.generic.edit import UpdateView
+from django.views.generic.list import ListView
 from members.models import Member
 
 
+class List(ListView):
+    model = Member
+    template_name = 'members/list.html'
+    
+    
 class Edit(UpdateView):
     model = Member
     fields = ['first_name', 'last_name', 'job_title', 'bio_text', 'photo']
