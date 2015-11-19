@@ -1,5 +1,6 @@
-from django.views.generic.edit import UpdateView
+from django.views.generic.edit import UpdateView, DeleteView
 from django.views.generic.list import ListView
+from django.core.urlresolvers import reverse_lazy
 from members.models import Member
 
 
@@ -19,3 +20,9 @@ class Edit(UpdateView):
 
     def dispatch(self, request, *args, **kwargs):
         return super(Edit, self).dispatch(request, *args, **kwargs)
+        
+
+class Delete(DeleteView):
+    model = Member
+    template_name = 'members/delete.html'
+    success_url = reverse_lazy('list')

@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <link type="text/css" rel="stylesheet" media="screen" href="{{STATIC_URL}}css/bootstrap.min.css"/>
-    <link type="text/css" rel="stylesheet" media="screen" href="{{STATIC_URL}}css/biopy.css"/>
-    <link href="{{STATIC_URL}}css/avenir_font.css" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>
-        {% block title %}
-        {% endblock %}
-    </title>
-</head>
-<body>
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'edit' %}">Home</a>
-            <a class="btn btn-primary logout" href="{% url 'logout' %}" role="button">Logout</a>
-            <p class="welcome">Welcome<a href=""></a></p>
+    <head>
+        <link type="text/css" rel="stylesheet" media="screen" href="{{STATIC_URL}}css/bootstrap.min.css"/>
+        <link type="text/css" rel="stylesheet" media="screen" href="{{STATIC_URL}}css/biopy.css"/>
+        <link href="{{STATIC_URL}}css/avenir_font.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>
+            {% block title %}
+            {% endblock %}
+        </title>
+    </head>
+    <body>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{% url 'edit' %}">Home</a>
+                <a class="btn btn-primary logout" href="{% url 'logout' %}" role="button">Logout</a>
+                <p class="welcome">Welcome<a href=""></a></p>
+            </div>
+        </nav>
+        <div>
+            {% block content %}
+            {% endblock %}
         </div>
-    </nav>
-    <div>
-        {% block content %}
-        {% endblock %}
-    </div>
-</body>
+    </body>
 </html>

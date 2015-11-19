@@ -1,0 +1,19 @@
+{% extends 'members/base.html' %}
+
+{% block title %}
+    Delete
+{% endblock %}
+
+{% block content %} 
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        <p>Are you sure you want to delete "{{ object }}"?</p>
+                        <button id="submit" class="btn btn-danger">Confirm</button>
+                    </form>
+                </div>
+            </div>
+        </div>            
+{% endblock %}
