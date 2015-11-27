@@ -9,11 +9,12 @@
         <div class="container">
             <div class="row">
             <div class="col-md-12">
-                <a href="{% url 'edit' %}"><button class="btn btn-primary">New Member</button></a>
+                <a href="{% url 'create' %}"><button class="btn btn-primary">New Member</button></a>
             </div>
             </div>
             {% for member in member_list %}
             <div class="row member {% if member = user %}me{% endif %}">
+                    <a href="{% url 'edit' member.id %}">
                 <div class="col-md-2">
                     {% if member.photo %}
                         <img src="{{ member.photo.url}}" class="img-circle circle-border" width=110 height=110/>
@@ -40,11 +41,10 @@
                 <div class="row">
                     {% if member != user %}
                         <a href="{% url 'delete' member.id %}"><button class="btn btn-danger">Delete</button></a>
+                        <a href="{% url 'edit' member.id %}"><button class="btn btn-warning">Update</button></a>
                     {% endif %}
                 </div>
             </div>
             {% endfor %}
         </div>  
 {% endblock %}   
- 
-		

@@ -1,4 +1,4 @@
-from django.views.generic.edit import UpdateView, DeleteView
+from django.views.generic.edit import UpdateView, DeleteView, CreateView, ModelFormMixin
 from django.views.generic.list import ListView
 from django.core.urlresolvers import reverse_lazy
 from members.models import Member
@@ -7,22 +7,30 @@ from members.models import Member
 class List(ListView):
     model = Member
     template_name = 'members/list.html'
-    
-    
+
+
 class Edit(UpdateView):
     model = Member
     fields = ['first_name', 'last_name', 'job_title', 'bio_text', 'photo']
     template_name = 'members/edit.html'
-    success_url = '/'
+    success_url = reverse_lazy('list')
 
-    def get_object(self, queryset=None):
-        return self.request.user
-
-    def dispatch(self, request, *args, **kwargs):
-        return super(Edit, self).dispatch(request, *args, **kwargs)
-        
 
 class Delete(DeleteView):
     model = Member
     template_name = 'members/delete.html'
     success_url = reverse_lazy('list')
+
+
+class Create(CreateView):
+    model = Member
+    fields = ['first_name', 'last_name', 'username', 'password']
+    template_name = 'members/create.html'
+    success_url = reverse_lazy('list')
+
+    def form_valid(self, form):
+        ''' Overriding the form valid method to set the user password correctly '''
+        self.object = form.save()
+        self.object.set_password(self.object.password)
+        self.object.save()
+        return super(ModelFormMixin, self).form_valid(form)

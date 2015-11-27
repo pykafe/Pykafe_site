@@ -1,0 +1,48 @@
+{% extends 'members/base.html' %}
+
+{% block title %}
+    Create
+{% endblock %}
+
+{% block content %} 
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2">
+                    <form action="" method="post">
+                        {% csrf_token %}
+                         
+                        <div class="col-md-12">
+                            {{ form.first_name.label_tag }}
+                            {{ form.first_name }}
+                            {{ form.first_name.errors }}
+                         </div>
+                         
+                          <div class="col-md-12">
+                            {{ form.last_name.label_tag }}
+                            {{ form.last_name }}
+                            {{ form.last_name.errors }}
+                         </div>
+                         
+                         <div class="col-md-12">
+                            {{ form.username.label_tag }}
+                            {{ form.username }}
+                            {{ form.username.errors }}
+                         </div>
+                         
+                         <div class="col-md-12">
+                            {{ form.password.label_tag }}
+                            {{ form.password }}
+                            {{ form.password.errors }}
+                          </div>
+
+
+                        <div class="col-md-12">
+                            <button id="submit" class="btn btn-primary">create</button>
+                        </div>
+                        
+                    </form>
+                </div>
+            </div>
+        </div> 
+                   
+{% endblock %}
