@@ -74,6 +74,8 @@ TEMPLATES = [
     },
 ]
 
+MESSAGE_STORAGE = 'django.contrib.messages.storage.cookie.CookieStorage'
+
 WSGI_APPLICATION = 'pykafe.wsgi.application'
 
 
@@ -116,4 +118,3 @@ LOGIN_REDIRECT_URL = '/'
 
 # Use pykafe employee user modelfor authentication
 AUTH_USER_MODEL = 'members.Member'
-

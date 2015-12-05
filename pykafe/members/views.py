@@ -1,6 +1,7 @@
 from django.views.generic.edit import UpdateView, DeleteView, CreateView, ModelFormMixin
 from django.views.generic.list import ListView
 from django.core.urlresolvers import reverse_lazy
+from django.contrib.messages.views import SuccessMessageMixin
 from members.models import Member
 
 
@@ -9,11 +10,12 @@ class List(ListView):
     template_name = 'members/list.html'
 
 
-class Edit(UpdateView):
+class Edit(SuccessMessageMixin, UpdateView):
     model = Member
     fields = ['first_name', 'last_name', 'job_title', 'bio_text', 'photo']
     template_name = 'members/edit.html'
     success_url = reverse_lazy('list')
+    success_message = "Updated successfully"
 
 
 class Delete(DeleteView):
