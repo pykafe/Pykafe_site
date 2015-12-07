@@ -10,8 +10,14 @@
                 <div class="col-md-12">
                     <form action="" method="post">
                         {% csrf_token %}
+                        {% if member.id != user.id %}
                         <p>Are you sure you want to delete "{{ object }}"?</p>
                         <button id="submit" class="btn btn-danger">Confirm</button>
+                        {% elif member.id = user.id %}
+                        <p>you don't delete your self  "{{ object }}"?</p>
+                        <a href="{% url 'list' %}"  id="submit" class="btn btn-primary">Members</a>
+                        {% endif %}
+
                     </form>
                 </div>
             </div>

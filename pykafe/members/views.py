@@ -24,11 +24,12 @@ class Delete(DeleteView):
     success_url = reverse_lazy('list')
 
 
-class Create(CreateView):
+class Create(SuccessMessageMixin, CreateView):
     model = Member
     fields = ['first_name', 'last_name', 'username', 'password']
     template_name = 'members/create.html'
     success_url = reverse_lazy('list')
+    success_message = "Create successfully"
 
     def form_valid(self, form):
         ''' Overriding the form valid method to set the user password correctly '''
