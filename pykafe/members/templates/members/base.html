@@ -15,7 +15,7 @@
             <div class="container-fluid">
                 <a class="navbar-brand" href="{% url 'list' %}">Home</a>
                 <a class="btn btn-primary logout" href="{% url 'logout' %}" role="button">Logout</a>
-                <p class="welcome">Welcome<a href=""></a></p>
+                     <p class="welcome">Welcome<a href="{% url 'edit' user.id %}"> {{ user.get_full_name }}</a></p>
             </div>
         </nav>
         {% if messages %}
