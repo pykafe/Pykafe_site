@@ -5,39 +5,46 @@
 {% endblock %}
 
 {% block content %}
-                <form method="post" action=".">
-                    {% csrf_token %}
-                    <div class="col-md-12">
-                        <div class="login_box">
-                        <div class="row">
-                                {% if form.errors %}
-                                    <p id="errors">Your username and password didn't match. Please try again.</p>
-                                {% endif %}
-                             <div class="col-md-6">
-                                 Username
-                             </div>
-                             <div class="col-md-12">
-                                <input type="text" name="username" class="form-control" placeholder="Enter your username"  value="{{ username }}" />
-                            </div>
-                        </div>
-                        <div class="row">
-                             <div class="col-md-6">
-                                Password    
-                             </div>     
-                             <div class="col-md-12">
-                                 <input type="password" name="password" class="form-control" placeholder="Enter your password" value="{{ password }}"/>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                               <label class="checkbox">
-                               <input type="checkbox" value="remember-me">Remember me
-                               </label>
-                               <input type="submit" class="btn btn-lg btn-success btn-block" value="Login"/>
-                               <p>Forgot password ?<a href="auth_password_reset">Reset it</a></p>
-                            </div>
-                        </div>
+    <form method="post" action=".">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-md-12">
+                <div class="login_box">
+                    <div class="row">
+                         {% if form.errors %}
+                             <p id="errors">Your username and password didn't match. Please try again.</p>
+                         {% endif %}
+                         <div class="col-md-6">
+                             Username
+                         </div>
+                         <div class="col-md-12">
+                            <input type="text" name="username" class="form-control" placeholder="Enter your username"  value="{{ username }}" />
                         </div>
                     </div>
-                </form>
-{% endblock %}
+                    <div class="row">
+                         <div class="col-md-6">
+                            Password    
+                         </div>     
+                         <div class="col-md-12">
+                             <input type="password" name="password" class="form-control" placeholder="Enter your password" value="{{ password }}"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                           <label class="checkbox">
+                           <input type="checkbox" value="remember-me">Remember me
+                           </label>
+                           <input type="submit" class="btn btn-lg btn-success btn-block" value="Login"/>
+                           <p>Forgot password ?<a href="auth_password_reset">Reset it</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <button id="login_button" class="btn btn-primary">Login</button>
+            </div>
+        </div>
+    </form>
+    {% endblock %}

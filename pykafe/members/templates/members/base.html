@@ -1,25 +1,33 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <link type="text/css" rel="stylesheet" media="screen" href="{{STATIC_URL}}css/bootstrap.min.css"/>
-    <link type="text/css" rel="stylesheet" media="screen" href="{{STATIC_URL}}css/biopy.css"/>
-    <link href="{{STATIC_URL}}css/avenir_font.css" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>
-        {% block title %}
-        {% endblock %}
-    </title>
-</head>
-<body>
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'edit' %}">Home</a>
-            <a class="btn btn-primary logout" href="{% url 'logout' %}" role="button">Logout</a>
+    <head>
+        <link type="text/css" rel="stylesheet" media="screen" href="{{STATIC_URL}}css/bootstrap.min.css"/>
+        <link type="text/css" rel="stylesheet" media="screen" href="{{STATIC_URL}}css/biopy.css"/>
+        <link href="{{STATIC_URL}}css/avenir_font.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>
+            {% block title %}
+            {% endblock %}
+        </title>
+    </head>
+    <body>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{% url 'list' %}">Home</a>
+                <a class="btn btn-primary logout" href="{% url 'logout' %}" role="button">Logout</a>
+                     <p class="welcome">Welcome<a href="{% url 'edit' user.id %}"> {{ user.get_full_name }}</a></p>
+            </div>
+        </nav>
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <div>
+            {% block content %}
+            {% endblock %}
         </div>
-    </nav>
-    <div>
-        {% block content %}
-        {% endblock %}
-    </div>
-</body>
+    </body>
 </html>
