@@ -1,0 +1,42 @@
+{% load i18n %}
+{% load endless %}
+
+
+{% paginate object_list %}
+{% for member in object_list %}
+            {% with member.object as member %}
+            <div class="row member {% if member = user %}me{% endif %}">
+                    <a href="{% url 'edit' member.id %}">
+                <div class="col-md-2">
+                    {% if member.photo %}
+                        <img src="{{ member.photo.url}}" class="img-circle circle-border" width=110 height=110/>
+                    </a>
+                    {% endif %}
+                </div>
+
+                <div class="col-md-3">
+                        {% if member.get_full_name %}
+                            {{ member.get_full_name }}
+                        {% else %}
+                            {{ member.username }}
+                        {% endif %}
+                    </a></p>
+                </div>
+                
+                <div class="col-md-3">
+                    <p>{{ member.job_title }}</p>
+                </div>
+                
+                <div class="col-md-3">
+                    <p>{{ member.bio_text }}</p>
+                </div>
+                <div class="row">
+                    {% if member != user %}
+                    <a href="{% url 'delete' member.id %}"><button class="btn btn-danger">{% trans 'Delete' %}</button></a>
+                    <a href="{% url 'edit' member.id %}"><button class="btn btn-warning">{% trans 'Update' %}</button></a>
+                    {% endif %}
+                </div>
+            </div>
+            {% endwith %}
+            {% endfor %}
+{% show_more %}

@@ -1,0 +1,128 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-01-05 12:19+0000\n"
+"PO-Revision-Date: 2016-01-05 09:33+0000\n"
+"Last-Translator: Joao de Dues <>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Translated-Using: django-rosetta 0.7.6\n"
+
+#: members/templates/endless/show_more.html:6
+msgid "more"
+msgstr "Presija tan"
+
+#: members/templates/members/base.html:21
+msgid "Home"
+msgstr "Uma"
+
+#: members/templates/members/base.html:22
+#: members/templates/registration/logged_out.html:5
+msgid "Logout"
+msgstr "Sai"
+
+#: members/templates/members/base.html:23
+msgid "Welcome"
+msgstr "Bem-Vindo"
+
+#: members/templates/members/create.html:5
+msgid "Create"
+msgstr "Kria"
+
+#: members/templates/members/create.html:41
+msgid "create"
+msgstr "Kria"
+
+#: members/templates/members/delete.html:5
+#: members/templates/members/list_page.html:35
+msgid "Delete"
+msgstr "Hamos"
+
+#: members/templates/members/delete.html:15
+msgid "Are you sure you want to delete "
+msgstr "Ita hakarak hamos"
+
+#: members/templates/members/delete.html:16
+msgid "Confirm"
+msgstr "Konfirma"
+
+#: members/templates/members/delete.html:18
+msgid "you dont delete your self"
+msgstr "Ita labele hamos ita a'an"
+
+#: members/templates/members/delete.html:19
+msgid "Members"
+msgstr "Membros"
+
+#: members/templates/members/edit.html:5
+msgid "Edit"
+msgstr "Troka"
+
+#: members/templates/members/edit.html:40
+msgid "Submit"
+msgstr "Manda"
+
+#: members/templates/members/list.html:5
+msgid " List"
+msgstr "Lista"
+
+#: members/templates/members/list.html:13
+msgid "New Member"
+msgstr "Membros Foun"
+
+#: members/templates/members/list_page.html:36
+msgid "Update"
+msgstr "Troka"
+
+#: members/templates/registration/logged_out.html:9
+msgid "You have logged out"
+msgstr "Ita sai ona"
+
+#: members/templates/registration/logged_out.html:10
+msgid "Login Again"
+msgstr "Login Ulan"
+
+#: members/templates/registration/login.html:6
+msgid "login"
+msgstr "Login"
+
+#: members/templates/registration/login.html:15
+msgid "Your username and password didnt match. Please try again"
+msgstr "O nia naran no nia password la hetan. Favor koko fila fali"
+
+#: members/templates/registration/login.html:21
+msgid "Username"
+msgstr "Naran"
+
+#: members/templates/registration/login.html:27
+msgid "Password"
+msgstr "Savi"
+
+#: members/templates/registration/login.html:34
+msgid "Login"
+msgstr "Login"
+
+#~ msgid "All Users"
+#~ msgstr "Ema hotu"
+
+#~ msgid "English"
+#~ msgstr "Englis"
+
+#~ msgid "Mambae"
+#~ msgstr "Mambae"
+
+#~ msgid "Tetum"
+#~ msgstr "Tetun"
+
+#~ msgid "you don"
+#~ msgstr "ita labele"

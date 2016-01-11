@@ -1,7 +1,8 @@
 {% extends 'members/base.html' %}
+{% load i18n %}
 
 {% block title %}
-    Edit
+    {% trans 'Edit' %}
 {% endblock %}
 
 {% block content %}
@@ -23,12 +24,14 @@
                     <div class="col-md-6">
                         {{ form.job_title.label_tag }}
                         {{ form.job_title }}
+                        {{ form.job_title.help_text }}
                         {{ form.job_title.errors }}
                     </div>
 
                     <div class="col-md-12">
                         {{ form.bio_text.label_tag }}
                         {{ form.bio_text }}
+                        {{ form.bio_text.help_text }}
                         {{ form.bio_text.errors }}
                     </div>
 
@@ -36,7 +39,7 @@
                         {{ form.photo.label_tag }}
                         {{ form.photo }}
                         {{ form.photo.errors }}
-                        <button id="submit" class="btn btn-primary">Submit</button>
+                        <button id="submit" class="btn btn-primary">{% trans 'Submit' %}</button>
                     </div>
                         {{ form.non_field_errors }}
                 </form>

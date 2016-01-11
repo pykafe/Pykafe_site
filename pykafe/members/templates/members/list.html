@@ -1,50 +1,29 @@
 {% extends 'members/base.html' %}
-
+{% load i18n %}
+{% load pykafe_filters %}
 {% block title %}
-    List
+    {% trans ' List' %}
 {% endblock %}
 
 {% block content %} 
          
         <div class="container">
             <div class="row">
-            <div class="col-md-12">
-                <a href="{% url 'create' %}"><button class="btn btn-primary">New Member</button></a>
+            <div class="col-md-9">
+                <a href="{% url 'create' %}"><button class="btn btn-primary">{% trans 'New Member' %}</button></a>
+            </div>
+            <div class="col-md-3">
+                <form action="." method="Get">
+                   {{ search_form.q|add_attributes:'placeholder:Search...' }}
+                </form>
             </div>
             </div>
-            {% for member in member_list %}
-            <div class="row member {% if member = user %}me{% endif %}">
-                    <a href="{% url 'edit' member.id %}">
-                <div class="col-md-2">
-                    {% if member.photo %}
-                        <img src="{{ member.photo.url}}" class="img-circle circle-border" width=110 height=110/>
-                    </a>
-                    {% endif %}
-                </div>
+                {% include page_template %}
 
-                <div class="col-md-3">
-                        {% if member.get_full_name %}
-                            {{ member.get_full_name }}
-                        {% else %}
-                            {{ member.username }}
-                        {% endif %}
-                    </a></p>
-                </div>
-                
-                <div class="col-md-3">
-                    <p>{{ member.job_title }}</p>
-                </div>
-                
-                <div class="col-md-3">
-                    <p>{{ member.bio_text }}</p>
-                </div>
-                <div class="row">
-                    {% if member != user %}
-                        <a href="{% url 'delete' member.id %}"><button class="btn btn-danger">Delete</button></a>
-                        <a href="{% url 'edit' member.id %}"><button class="btn btn-warning">Update</button></a>
-                    {% endif %}
-                </div>
-            </div>
-            {% endfor %}
         </div>  
+            <script type="text/javasscript">
+    $.endlessPaginate({
+        paginateOnScroll: true,
+    });
+            </script>
 {% endblock %}   

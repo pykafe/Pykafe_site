@@ -1,0 +1,5 @@
+{{ object.pk }}
+{{ object.first_name }}
+{{ object.last_name }}
+{{ object.username}}
+{{ object.job_title}}

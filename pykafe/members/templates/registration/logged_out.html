@@ -1,10 +1,11 @@
 {% extends 'registration/base.html' %}
+{% load i18n %}
 
 {% block title %}
-	Logout
+{% trans 'Logout' %}
 {% endblock %}
 
 {% block content %}
-	<div id="logout_msg"> You have logged out</div>
-	<a class="btn btn-primary" href="{% url 'login' %}" role="button">Login Again</a>
+<div id="logout_msg"> {% trans 'You have logged out' %}</div>
+<a class="btn btn-primary" href="{% url 'login' %}" role="button">{% trans 'Login Again' %}</a>
 {% endblock %}

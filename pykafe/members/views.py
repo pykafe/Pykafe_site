@@ -1,13 +1,30 @@
 from django.views.generic.edit import UpdateView, DeleteView, CreateView, ModelFormMixin
-from django.views.generic.list import ListView
 from django.core.urlresolvers import reverse_lazy
 from django.contrib.messages.views import SuccessMessageMixin
 from members.models import Member
+from endless_pagination.views import AjaxListView
+from haystack.views import SearchView as HayStackSearchView
+from members.forms import PykafeSearchForm
 
 
-class List(ListView):
+class List(AjaxListView, HayStackSearchView):
     model = Member
     template_name = 'members/list.html'
+    page_template = 'members/list_page.html'
+    form_class = PykafeSearchForm
+    allow_emty = True
+    load_all = True
+    searchqueryset = None
+
+    def get_queryset(self, *args, **kwargs):
+        self.form = self.build_form()
+        self.query = self.get_query()
+        return self.get_results()
+
+    def get_context_data(self, *args, **kwargs):
+        context = super(List, self).get_context_data(*args, **kwargs)
+        context['search_form'] = self.form_class
+        return context
 
 
 class Edit(SuccessMessageMixin, UpdateView):

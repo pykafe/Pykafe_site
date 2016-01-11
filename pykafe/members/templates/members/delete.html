@@ -1,7 +1,8 @@
 {% extends 'members/base.html' %}
+{% load i18n %}
 
 {% block title %}
-    Delete
+    {% trans 'Delete' %}
 {% endblock %}
 
 {% block content %} 
@@ -11,11 +12,11 @@
                     <form action="" method="post">
                         {% csrf_token %}
                         {% if member.id != user.id %}
-                        <p>Are you sure you want to delete "{{ object }}"?</p>
-                        <button id="submit" class="btn btn-danger">Confirm</button>
+                        <p>{% trans 'Are you sure you want to delete ' %}"{{ object }}"?</p>
+                        <button id="submit" class="btn btn-danger">{% trans 'Confirm' %}</button>
                         {% elif member.id = user.id %}
-                        <p>you don't delete your self  "{{ object }}"?</p>
-                        <a href="{% url 'list' %}"  id="submit" class="btn btn-primary">Members</a>
+                        <p>{% trans 'you dont delete your self' %}  "{{ object }}"?</p>
+                        <a href="{% url 'list' %}"  id="submit" class="btn btn-primary">{% trans 'Members' %}</a>
                         {% endif %}
 
                     </form>

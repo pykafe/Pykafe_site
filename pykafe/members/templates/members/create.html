@@ -1,7 +1,8 @@
 {% extends 'members/base.html' %}
+{% load i18n %}
 
 {% block title %}
-    Create
+    {% trans 'Create' %}
 {% endblock %}
 
 {% block content %} 
@@ -37,7 +38,7 @@
 
 
                         <div class="col-md-12">
-                            <button id="submit" class="btn btn-primary">create</button>
+                            <button id="submit" class="btn btn-primary">{% trans 'create' %}</button>
                         </div>
                         
                     </form>

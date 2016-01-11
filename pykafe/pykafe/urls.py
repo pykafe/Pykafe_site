@@ -13,7 +13,7 @@ Including another URLconf
     1. Add an import:  from blog import urls as blog_urls
     2. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
-from django.conf.urls import include, url
+from django.conf.urls import include, url, patterns
 from django.contrib import admin
 from django.conf.urls.static import static
 from django.conf import settings
@@ -23,3 +23,12 @@ urlpatterns = [
     url(r'^accounts/', include('django.contrib.auth.urls')),
     url(r'^', include('members.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+urlpatterns += [
+             url(r'^i18n/', include('django.conf.urls.i18n')),
+        ]
+
+if 'rosetta' in settings.INSTALLED_APPS:
+    urlpatterns += patterns('',
+                    url(r'^rosetta/', include('rosetta.urls')),
+                            )
