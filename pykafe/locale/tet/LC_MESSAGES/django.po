@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-05 12:19+0000\n"
+"POT-Creation-Date: 2016-01-12 02:03+0000\n"
 "PO-Revision-Date: 2016-01-05 09:33+0000\n"
 "Last-Translator: Joao de Dues <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,6 +18,18 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Translated-Using: django-rosetta 0.7.6\n"
 
+#: members/forms.py:12
+msgid "All Users"
+msgstr "Ema hotu"
+
+#: members/models.py:9
+msgid "Please write your job title"
+msgstr ""
+
+#: members/models.py:10
+msgid "Please write your bio text"
+msgstr ""
+
 #: members/templates/endless/show_more.html:6
 msgid "more"
 msgstr "Presija tan"
@@ -26,14 +38,25 @@ msgstr "Presija tan"
 msgid "Home"
 msgstr "Uma"
 
-#: members/templates/members/base.html:22
+#: members/templates/members/base.html:23
 #: members/templates/registration/logged_out.html:5
 msgid "Logout"
 msgstr "Sai"
 
-#: members/templates/members/base.html:23
+#: members/templates/members/base.html:24
 msgid "Welcome"
 msgstr "Bem-Vindo"
+
+#: members/templates/members/base.html:24
+#, fuzzy
+#| msgid "Password"
+msgid "Change password"
+msgstr "Savi"
+
+#: members/templates/members/base.html:26
+#: members/templates/registration/login.html:34
+msgid "Login"
+msgstr "Login"
 
 #: members/templates/members/create.html:5
 msgid "Create"
@@ -68,7 +91,10 @@ msgstr "Membros"
 msgid "Edit"
 msgstr "Troka"
 
-#: members/templates/members/edit.html:40
+#: members/templates/members/edit.html:42
+#: members/templates/registration/password_change_form.html:9
+#: members/templates/registration/password_reset_confirm.html:12
+#: members/templates/registration/password_reset_form.html:17
 msgid "Submit"
 msgstr "Manda"
 
@@ -83,6 +109,27 @@ msgstr "Membros Foun"
 #: members/templates/members/list_page.html:36
 msgid "Update"
 msgstr "Troka"
+
+#: members/templates/registration/activate.html:6
+msgid "Account activation failed"
+msgstr ""
+
+#: members/templates/registration/activation_complete.html:5
+msgid "Your account is now activated."
+msgstr ""
+
+#: members/templates/registration/activation_email.txt:2
+msgid "Activate account at"
+msgstr ""
+
+#: members/templates/registration/activation_email.txt:6
+#, python-format
+msgid "Link is valid for %(expiration_days)s days."
+msgstr ""
+
+#: members/templates/registration/activation_email_subject.txt:1
+msgid "Account activation on"
+msgstr ""
 
 #: members/templates/registration/logged_out.html:9
 msgid "You have logged out"
@@ -108,21 +155,59 @@ msgstr "Naran"
 msgid "Password"
 msgstr "Savi"
 
-#: members/templates/registration/login.html:34
-msgid "Login"
-msgstr "Login"
+#: members/templates/registration/login.html:35
+#, fuzzy
+#| msgid "Password"
+msgid "Reset Password"
+msgstr "Savi"
 
-#~ msgid "All Users"
-#~ msgstr "Ema hotu"
+#: members/templates/registration/password_change_done.html:5
+#, fuzzy
+#| msgid "Password"
+msgid "Password changed"
+msgstr "Savi"
 
-#~ msgid "English"
-#~ msgstr "Englis"
+#: members/templates/registration/password_reset_complete.html:7
+#: members/templates/registration/password_reset_form.html:7
+msgid "Back"
+msgstr ""
 
-#~ msgid "Mambae"
-#~ msgstr "Mambae"
+#: members/templates/registration/password_reset_complete.html:10
+msgid "Password reset successfully"
+msgstr ""
 
-#~ msgid "Tetum"
-#~ msgstr "Tetun"
+#: members/templates/registration/password_reset_complete.html:11
+msgid "Log in"
+msgstr ""
+
+#: members/templates/registration/password_reset_confirm.html:17
+msgid "Password reset failed"
+msgstr ""
+
+#: members/templates/registration/password_reset_done.html:5
+msgid "Email with password reset instructions has been sent."
+msgstr ""
+
+#: members/templates/registration/password_reset_email.html:2
+#, python-format
+msgid "Reset password at %(site_name)s"
+msgstr ""
+
+#: members/templates/registration/password_reset_form.html:11
+msgid "Reset your password"
+msgstr ""
+
+#: pykafe/settings.py:107
+msgid "English"
+msgstr "Englis"
+
+#: pykafe/settings.py:108
+msgid "Mambae"
+msgstr "Mambae"
+
+#: pykafe/settings.py:109
+msgid "Tetum"
+msgstr "Tetun"
 
 #~ msgid "you don"
 #~ msgstr "ita labele"
