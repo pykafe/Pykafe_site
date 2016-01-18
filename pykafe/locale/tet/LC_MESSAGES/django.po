@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-12 02:03+0000\n"
+"POT-Creation-Date: 2016-01-18 00:56+0000\n"
 "PO-Revision-Date: 2016-01-05 09:33+0000\n"
 "Last-Translator: Joao de Dues <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -53,7 +53,7 @@ msgstr "Bem-Vindo"
 msgid "Change password"
 msgstr "Savi"
 
-#: members/templates/members/base.html:26
+#: members/templates/members/base.html:27
 #: members/templates/registration/login.html:34
 msgid "Login"
 msgstr "Login"
@@ -197,15 +197,15 @@ msgstr ""
 msgid "Reset your password"
 msgstr ""
 
-#: pykafe/settings.py:107
+#: pykafe/settings.py:108
 msgid "English"
 msgstr "Englis"
 
-#: pykafe/settings.py:108
+#: pykafe/settings.py:109
 msgid "Mambae"
 msgstr "Mambae"
 
-#: pykafe/settings.py:109
+#: pykafe/settings.py:110
 msgid "Tetum"
 msgstr "Tetun"
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-05 12:19+0000\n"
+"POT-Creation-Date: 2016-01-18 00:56+0000\n"
 "PO-Revision-Date: 2016-01-05 06:49+0000\n"
 "Last-Translator: Joao de Dues <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,6 +18,18 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Translated-Using: django-rosetta 0.7.6\n"
 
+#: members/forms.py:12
+msgid "All Users"
+msgstr "Atua siria"
+
+#: members/models.py:9
+msgid "Please write your job title"
+msgstr ""
+
+#: members/models.py:10
+msgid "Please write your bio text"
+msgstr ""
+
 #: members/templates/endless/show_more.html:6
 msgid "more"
 msgstr ""
@@ -26,13 +38,22 @@ msgstr ""
 msgid "Home"
 msgstr ""
 
-#: members/templates/members/base.html:22
+#: members/templates/members/base.html:23
 #: members/templates/registration/logged_out.html:5
 msgid "Logout"
 msgstr ""
 
-#: members/templates/members/base.html:23
+#: members/templates/members/base.html:24
 msgid "Welcome"
+msgstr ""
+
+#: members/templates/members/base.html:24
+msgid "Change password"
+msgstr ""
+
+#: members/templates/members/base.html:27
+#: members/templates/registration/login.html:34
+msgid "Login"
 msgstr ""
 
 #: members/templates/members/create.html:5
@@ -68,7 +89,10 @@ msgstr ""
 msgid "Edit"
 msgstr ""
 
-#: members/templates/members/edit.html:40
+#: members/templates/members/edit.html:42
+#: members/templates/registration/password_change_form.html:9
+#: members/templates/registration/password_reset_confirm.html:12
+#: members/templates/registration/password_reset_form.html:17
 msgid "Submit"
 msgstr ""
 
@@ -82,6 +106,27 @@ msgstr ""
 
 #: members/templates/members/list_page.html:36
 msgid "Update"
+msgstr ""
+
+#: members/templates/registration/activate.html:6
+msgid "Account activation failed"
+msgstr ""
+
+#: members/templates/registration/activation_complete.html:5
+msgid "Your account is now activated."
+msgstr ""
+
+#: members/templates/registration/activation_email.txt:2
+msgid "Activate account at"
+msgstr ""
+
+#: members/templates/registration/activation_email.txt:6
+#, python-format
+msgid "Link is valid for %(expiration_days)s days."
+msgstr ""
+
+#: members/templates/registration/activation_email_subject.txt:1
+msgid "Account activation on"
 msgstr ""
 
 #: members/templates/registration/logged_out.html:9
@@ -108,9 +153,52 @@ msgstr ""
 msgid "Password"
 msgstr ""
 
-#: members/templates/registration/login.html:34
-msgid "Login"
+#: members/templates/registration/login.html:35
+msgid "Reset Password"
 msgstr ""
 
-#~ msgid "All Users"
-#~ msgstr "Atua siria"
+#: members/templates/registration/password_change_done.html:5
+msgid "Password changed"
+msgstr ""
+
+#: members/templates/registration/password_reset_complete.html:7
+#: members/templates/registration/password_reset_form.html:7
+msgid "Back"
+msgstr ""
+
+#: members/templates/registration/password_reset_complete.html:10
+msgid "Password reset successfully"
+msgstr ""
+
+#: members/templates/registration/password_reset_complete.html:11
+msgid "Log in"
+msgstr ""
+
+#: members/templates/registration/password_reset_confirm.html:17
+msgid "Password reset failed"
+msgstr ""
+
+#: members/templates/registration/password_reset_done.html:5
+msgid "Email with password reset instructions has been sent."
+msgstr ""
+
+#: members/templates/registration/password_reset_email.html:2
+#, python-format
+msgid "Reset password at %(site_name)s"
+msgstr ""
+
+#: members/templates/registration/password_reset_form.html:11
+msgid "Reset your password"
+msgstr ""
+
+#: pykafe/settings.py:108
+msgid "English"
+msgstr ""
+
+#: pykafe/settings.py:109
+msgid "Mambae"
+msgstr ""
+
+#: pykafe/settings.py:110
+msgid "Tetum"
+msgstr ""
