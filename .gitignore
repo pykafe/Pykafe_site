@@ -74,3 +74,6 @@ pykafe/db.sqlite3
 
 # django media directory
 pykafe/media/
+
+# whoosh search index
+pykafe/pykafe/whoosh_index/
