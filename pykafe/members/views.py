@@ -3,6 +3,8 @@ from django.views.generic.list import ListView
 from django.core.urlresolvers import reverse_lazy
 from django.contrib.messages.views import SuccessMessageMixin
 from members.models import Member
+from rest_framework import viewsets
+from members.serializers import MemberSerializer
 
 
 class List(ListView):
@@ -37,3 +39,11 @@ class Create(SuccessMessageMixin, CreateView):
         self.object.set_password(self.object.password)
         self.object.save()
         return super(ModelFormMixin, self).form_valid(form)
+
+
+class MemberViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows users to be viewed or edited.
+    """
+    queryset = Member.objects.all()
+    serializer_class = MemberSerializer
